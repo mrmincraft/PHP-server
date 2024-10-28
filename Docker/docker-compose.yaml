@@ -1,19 +1,21 @@
+version: "3"
 services:
   webserver:
     image: nginx:latest
     ports:
       - "80:80"
     volumes:
-      - ./services/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
-      - ../CV/WithEditModalAndLoginDatabase:/app
+      - ./service/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+      - ../CV/app/:/app
   app:
-    build: services/php
+    build: service/php
     volumes:
       - ../app:/app
   db:
     image: mariadb:latest
     environment:
-    env_file: .env
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "cv_db"
     volumes:
       - mysqldata:/var/lib/mysql
     ports:
