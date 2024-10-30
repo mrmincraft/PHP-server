@@ -6,7 +6,7 @@ services:
       - "80:80"
     volumes:
       - ./service/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
-      - ../CV/app/:/app
+      - ../app/:/app
   app:
     build: service/php
     volumes:
