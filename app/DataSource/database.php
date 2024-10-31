@@ -18,7 +18,15 @@
         echo"you are connected !";
     }
 
-    
-    
+ class db {
 
-?>
+    private $name;
+    private $server;
+    private $user;
+    private $pass;
+    
+    public db
+
+ }
+    
+    

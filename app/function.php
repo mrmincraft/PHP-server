@@ -14,7 +14,7 @@ function urlIs($value){
 function routeToController($uri,$routes){
     if(array_key_exists($uri,$routes)){
         require $routes[$uri];
-    } else{
+    } else {
         abort(404);
     };
 }

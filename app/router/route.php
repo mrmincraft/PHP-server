@@ -1,21 +1,15 @@
 <?php
-/*$routes = [
-    'GET' => [
-        '/' => 'home',
-        '/home' => 'home',
-        '/login' => 'login',
-        '/logout' => 'logout',
-        '/edit' => 'editProfile'
-    ],
-    'POST' => [
-        '/login' => 'processLogin',
-        '/edit' => 'processEditProfile'
-    ]
+
+$routes = [
+    '/' => 'controler/home.php',
+    '/about' => 'controler/about.php',
+    '/contact' => 'controler/contact.php',
 ];
 
+$uri = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
 
-
-$requestUri = rtrim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
-if (empty($requestUri)) {
-    $requestUri = '/';
-}*/
+if (empty($uri)) {
+    $uri = '/';
+}
+dd($uri);
+routeToController($uri,$routes);

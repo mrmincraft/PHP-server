@@ -1,3 +1,6 @@
+DISCLAMER
+this git project is lacking a composer router and somme nginx configuration please dont use it as refference
+
 # PHP-server
 wellcome to my PHP server repo
 
